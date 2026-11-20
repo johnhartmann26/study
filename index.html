@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TMOD Dystrophies Atlas</title>
+<meta name="description" content="NBEO Part II (TMOD) study reference: corneal dystrophies and inherited retinal diseases with photos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<style>
+/* Layout: atlas plates. Each condition is a plate: facts on the left, the photo on the right, stacked on phones. */
+:root{
+  --bg:#f3f6f6; --surface:#ffffff; --ink:#132a30; --muted:#566d73; --line:#d6e0e2;
+  --accent:#0e5866; --flag:#9a4d10; --flag-bg:#fbf1e6;
+  --ad:#0e5866; --ar:#a3361b; --xl:#6b3fa0; --mito:#2d7a3e; --sp:#66777b;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1719; --surface:#152225; --ink:#e3ecee; --muted:#9db0b5; --line:#2a3b3f;
+  --accent:#6cc3d2; --flag:#f0b27a; --flag-bg:#2c2117;
+  --ad:#6cc3d2; --ar:#f08a6c; --xl:#bb9af0; --mito:#7fd28f; --sp:#a3b2b6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1719; --surface:#152225; --ink:#e3ecee; --muted:#9db0b5; --line:#2a3b3f;
+  --accent:#6cc3d2; --flag:#f0b27a; --flag-bg:#2c2117;
+  --ad:#6cc3d2; --ar:#f08a6c; --xl:#bb9af0; --mito:#7fd28f; --sp:#a3b2b6; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+a{color:var(--accent)}
+a:focus-visible,.card:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.4vw,40px);line-height:1.1}
+h2{font-size:26px;border-bottom:2px solid var(--accent);padding-bottom:6px}
+h3{font-size:21px;line-height:1.2}
+.eyebrow,.lbl,.group,dt,.kind{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);margin:0}
+.intro{display:grid;gap:12px}
+.intro p{margin:0;max-width:70ch;color:var(--muted)}
+.key{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{font:600 14px var(--body);background:var(--accent);color:var(--surface);border:0;border-radius:6px;padding:9px 14px;cursor:pointer}
+button[aria-pressed="false"]{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.tools span{font-size:13px;color:var(--muted)}
+details.summary{background:var(--flag-bg);border:1px solid var(--line);border-radius:8px;padding:14px 18px}
+details.summary summary{cursor:pointer;font-weight:600;color:var(--flag)}
+details.summary ul{margin:10px 0 0;padding-left:20px;display:grid;gap:6px;font-size:14px}
+.part{display:grid;gap:18px}
+.rule{margin:0;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:8px;font-size:14px}
+.group{margin-top:10px;color:var(--accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;position:relative;break-inside:avoid}
+.info{display:grid;gap:12px;align-content:start;min-width:0}
+.info header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.alt{font-style:italic;color:var(--muted);font-size:14px}
+.meta{display:grid;grid-template-columns:1fr auto;gap:12px;margin:0}
+.meta dd{margin:2px 0 0;font-size:14px}
+.inh{display:inline-block;font-size:12px;font-weight:600;border:1.5px solid currentColor;border-radius:4px;padding:1px 6px;margin:0 4px 4px 0;white-space:nowrap}
+.inh-AD{color:var(--ad)}.inh-AR{color:var(--ar)}.inh-XL{color:var(--xl)}.inh-Mito{color:var(--mito)}.inh-sp{color:var(--sp)}
+.pearls{margin:0;font-size:14.5px}
+.changed{border-left:3px solid var(--flag);background:var(--flag-bg);padding:8px 12px;border-radius:0 6px 6px 0}
+.changed .lbl{color:var(--flag)}
+.changed ul,.sources ul{margin:4px 0 0;padding-left:18px;font-size:13px;display:grid;gap:4px}
+.sources ul{font-size:12.5px}
+.figs{display:grid;gap:14px;align-content:start;min-width:0}
+.fig{margin:0;display:grid;gap:6px}
+.fig img{width:100%;max-height:420px;object-fit:contain;background:#000;border-radius:6px;display:block}
+.fig figcaption{font-size:12.5px;line-height:1.45;color:var(--muted);display:grid;gap:3px}
+.kind{color:var(--accent)}
+.credit{font-size:11.5px;overflow-wrap:anywhere}
+.credits{margin:28px 0 8px;font-size:12px;color:var(--muted)}.credits summary{cursor:pointer;font-weight:600}.credits ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px}.credits li{overflow-wrap:anywhere}
+.reveal-hint{display:none}
+.hooks{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 22px}
+.hooks ul{margin:0;padding-left:18px;display:grid;gap:10px}
+footer{font-size:12.5px;color:var(--muted);max-width:75ch}
+/* Quiz mode: hide everything that names the condition until the plate is tapped */
+body.quiz .card:not(.open) .info,body.quiz .card:not(.open) figcaption{filter:blur(9px);user-select:none;pointer-events:none}
+body.quiz .card:not(.open){cursor:pointer}
+body.quiz .card:not(.open) .reveal-hint{display:block;position:absolute;left:20px;top:20px;margin:0;font-weight:600;color:var(--accent);background:var(--surface);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
+body.quiz .group{visibility:hidden}
+@media (max-width:760px){.card{grid-template-columns:minmax(0,1fr)}.figs{order:-1}}
+@media (prefers-reduced-motion:no-preference){.card .info,.card figcaption{transition:filter .2s}}
+@media print{
+  @page{size:letter;margin:12mm}
+  body{background:#fff;font-size:11.5px}
+  .wrap{padding:0;gap:14px;max-width:none}
+  .tools,.reveal-hint{display:none!important}
+  details.summary{display:block}
+  details.summary>*{display:block}
+  .card{padding:12px;gap:14px;border-color:#bbb}
+  .fig img{max-height:250px}
+  h2{break-after:avoid}.group{break-after:avoid}
+  .part{break-before:page}
+}
+</style>
+
+<main class="wrap">
+  <div class="intro">
+    <p class="eyebrow">NBEO Part II (TMOD) · high-yield study reference</p>
+    <h1>Corneal Dystrophies &amp; Inherited Retinal Diseases</h1>
+    <p>Your original chart, fact-checked against the IC3D 2024 classification, EyeWiki, EyeRounds and peer-reviewed reviews. Each condition now has a photo: slit lamp for the cornea, fundus for the retina. Notes in orange show what changed and link to the source. Click any photo to open its original page.</p>
+    <div class="key"><span class="inh inh-AD">AD</span>autosomal dominant <span class="inh inh-AR">AR</span>autosomal recessive <span class="inh inh-XL">XL</span>X-linked <span class="inh inh-Mito">Mito</span>mitochondrial (maternal) <span class="inh inh-sp">Sporadic</span>usually not inherited</div>
+  </div>
+  <div class="tools">
+    <button id="quiz" type="button" aria-pressed="false">Quiz me: hide names</button>
+    <span id="quizhelp">Shows only the photos. Tap a plate to reveal the answer.</span>
+  </div>
+  <details class="summary" open>
+    <summary>32 changes from the original chart</summary>
+    <ul><li><a href="#ebmd">Epithelial Basement Membrane (EBMD)</a>: Inheritance clarified: IC3D 2024 calls EBMD most likely degenerative; true AD families are rare.</li><li><a href="#meesmann">Meesmann</a>: "Peculiar substance" is an electron-microscopy finding; the PAS-positive material is the cyst debris on light microscopy.</li><li><a href="#lisch">Lisch Epithelial</a>: Inheritance: IC3D 2024 reclassified Lisch as AD (MCOLN1) after the gene was found. Older references and EyeWiki still say XLD.</li><li><a href="#lisch">Lisch Epithelial</a>: Removed "interpalpebral zone" (that describes Meesmann). Reworded "clear in retroillumination" to "densely crowded clear microcysts on retroillumination".</li><li><a href="#reis-bucklers">Reis-Bücklers</a>: Error fixed: the original said "curly fibers" on EM. Curly fibers belong to Thiel-Behnke; Reis-Bücklers shows rod-shaped bodies.</li><li><a href="#thiel-behnke">Thiel-Behnke</a>: Error fixed: "sawtooth" is a light-microscopy pattern, not EM. The EM finding is curly fibers.</li><li><a href="#macular">Macular</a>: Added: corneal thinning (an omission, not an error).</li><li><a href="#lattice">Lattice (Type 1)</a>: Updated wording: Meretoja (old LCD type 2) is now familial systemic gelsolin amyloidosis (GSN), not a true corneal dystrophy.</li><li><a href="#avellino">Avellino</a>: Reworded: IC3D discourages the old name "combined granular-lattice"; the linear deposits are not true lattice lines.</li><li><a href="#schnyder">Schnyder</a>: Layer corrected: starts centrally in the anterior stroma but becomes panstromal (the row already said "panstromal haze").</li><li><a href="#cloudy-francois">Central Cloudy of François</a>: Inheritance nuance: IC3D says AD inheritance is reported but "difficult to substantiate"; most likely degenerative.</li><li><a href="#fleck">Fleck</a>: Corrected: the original said "normal corneal sensation"; IC3D and EyeWiki note sensation can be decreased.</li><li><a href="#ched">Congenital Hereditary Endothelial (CHED)</a>: Corrected: "bilateral symmetric" changed to "bilateral, often asymmetric" (IC3D).</li><li><a href="#rp">Retinitis Pigmentosa (RP)</a>: Clarified: the scotopic ERG is reduced/delayed early and only becomes extinguished in advanced RP.</li><li><a href="#achromatopsia">Achromatopsia</a>: Nuance added: fundus is normal early but OCT usually shows ellipsoid-zone disruption; mild RPE changes can develop later.</li><li><a href="#bcm">Blue Cone Monochromacy</a>: Corrected: the original said BCM "preserves blue-yellow discrimination". That overstates it; residual discrimination is limited and mostly mesopic.</li><li><a href="#csnb">Congenital Stationary Night Blindness (CSNB)</a>: Corrected: only the Schubert-Bornschein forms (XL/AR) have an electronegative ERG; the AD Riggs type does not.</li><li><a href="#oguchi">Oguchi Disease</a>: Softened timing: reported dark-adaptation times range from ~45 min to 3+ h.</li><li><a href="#albipunctatus">Fundus Albipunctatus</a>: Added: rod ERG recovers after prolonged dark adaptation; not always stationary (some RDH5 patients develop cone dystrophy).</li><li><a href="#lca">Leber Congenital Amaurosis (LCA)</a>: Clarified: mostly AR with rare AD forms (CRX, IMPDH1, OTX2); voretigene is only for biallelic RPE65.</li><li><a href="#stargardt">Stargardt Disease</a>: Layer clarified: ABCA4 is a photoreceptor protein; lipofuscin accumulates in the RPE.</li><li><a href="#stargardt">Stargardt Disease</a>: Dark choroid is not universal (up to ~62% of patients).</li><li><a href="#best">Best Disease</a>: Arden cutoff written as ≤ 1.5 (normal ≥ 1.8); added incomplete penetrance.</li><li><a href="#pattern">Pattern Dystrophies</a>: PRPH2 is the most common gene, not the only one; EOG is normal to mildly subnormal depending on subtype.</li><li><a href="#sorsby">Sorsby Fundus Dystrophy</a>: Added: night blindness and delayed dark adaptation are common first symptoms.</li><li><a href="#doyne">Doyne Honeycomb</a>: Clarified onset: drusen appear in the 20s–30s but symptoms usually start in the 4th–5th decade.</li><li><a href="#xlrs">X-Linked Juvenile Retinoschisis (XLRS)</a>: Corrected the layer: foveal schisis is mainly in the inner nuclear layer on OCT; splitting at the nerve fiber layer describes the peripheral schisis.</li><li><a href="#xlrs">X-Linked Juvenile Retinoschisis (XLRS)</a>: "100%" changed to "nearly all"; "bullous" removed (bullous peripheral schisis is mainly seen in infants).</li><li><a href="#lhon">Leber Hereditary Optic Neuropathy (LHON)</a>: Added the three primary mtDNA mutations and idebenone; noted that onset can occur outside 15–35.</li><li><a href="#kjer">Dominant Optic Atrophy (Kjer)</a>: Onset widened from "first decade" to 1st–2nd decade (very insidious).</li><li><a href="#gyrate">Gyrate Atrophy</a>: Clarified: vitamin B6 only helps the minority of patients who are B6-responsive.</li><li><a href="#cacd">Central Areolar Choroidal Dystrophy</a>: Added the gene (PRPH2). Layer corrected: histology shows loss of photoreceptors and RPE with secondary choriocapillaris atrophy. Onset range widened from 30–50.</li></ul>
+  </details>
+  <section class="part" id="cornea"><h2>Corneal dystrophies, anterior to posterior</h2>
+<p class="rule"><b>Board rule of thumb:</b> almost all corneal dystrophies are <b>autosomal dominant</b>. Memorize the exceptions: <b>Macular</b> (AR), <b>Gelatinous drop-like</b> (AR), <b>CHED</b> (AR, formerly CHED2) and <b>Lisch</b> (classically X-linked dominant; IC3D 2024 now lists it as AD).</p>
+<h4 class="group">Epithelial &amp; subepithelial</h4>
+<article class="card" id="ebmd" tabindex="0">
+  <div class="info">
+    <header><h3>Epithelial Basement Membrane (EBMD)</h3><span class="alt">Map-dot-fingerprint / Cogan</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Epithelium &amp; basement membrane</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-sp">Sporadic</span><span class="inh inh-AD">rare AD</span></dd></div></dl>
+    <p class="pearls">Most common anterior corneal dystrophy; IC3D now considers it mostly degenerative. Geographic map lines, fingerprint lines, Cogan microcysts (dots). Causes recurrent corneal erosions (RCE). Negative staining with NaFl.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Inheritance clarified: IC3D 2024 calls EBMD most likely degenerative; true AD families are rare. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li><li><a href="https://eyewiki.org/Epithelial_Basement_Membrane_Dystrophy" target="_blank" rel="noopener">EyeWiki: Epithelial Basement Membrane Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener"><img src="img/ebmd.jpg" alt="Slit lamp: IC3D Figure 1 (multi-panel). Use panels A-D: A, map-like changes (direct/diffuse illumination); B, intraepithelial dot opacities (Cogan microcysts) with maps; C, fingerprint lines on retroillumination; D, Bron bleb pattern on retroillumination. Panels E-H are histology, confocal and OCT."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">IC3D Figure 1 (multi-panel). Use panels A-D: A, map-like changes (direct/diffuse illumination); B, intraepithelial dot opacities (Cogan microcysts) with maps; C, fingerprint lines on retroillumination; D, Bron bleb pattern on retroillumination. Panels E-H are histology, confocal and OCT.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="meesmann" tabindex="0">
+  <div class="info">
+    <header><h3>Meesmann</h3><span class="alt">Juvenile epithelial</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Epithelium</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>KRT3/KRT12</em>. Myriad tiny intraepithelial microcysts, densest interpalpebrally and extending to the limbus; best seen on retroillumination. Usually asymptomatic or mild glare. Cysts contain PAS-positive debris; "peculiar substance" is the EM finding.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>"Peculiar substance" is an electron-microscopy finding; the PAS-positive material is the cyst debris on light microscopy. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li><li><a href="https://eyewiki.org/Meesmann_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Meesmann Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Meesmann_corneal_dystrophy_-_Multiple_opaque_spots_in_the_corneal_epithelium.JPEG" target="_blank" rel="noopener"><img src="img/meesmann.jpg" alt="Slit lamp: Slit-lamp photo with broad-beam light: myriad tiny, uniform, round gray-white intraepithelial microcysts scattered across the cornea."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Slit-lamp photo with broad-beam light: myriad tiny, uniform, round gray-white intraepithelial microcysts scattered across the cornea.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="lisch" tabindex="0">
+  <div class="info">
+    <header><h3>Lisch Epithelial</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Epithelium</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-XL">XLD</span><span class="inh inh-AD">IC3D 2024: AD</span></dd></div></dl>
+    <p class="pearls">Gray, feathery, whorled or band-shaped epithelial opacities; may or may not reach the limbus, can be asymmetric. Retroillumination shows densely crowded <b>clear</b> microcysts. Board answer is still usually X-linked dominant; IC3D 2024 reclassified it as AD (<em>MCOLN1</em>).</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Inheritance: IC3D 2024 reclassified Lisch as AD (MCOLN1) after the gene was found. Older references and EyeWiki still say XLD. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li><li>Removed "interpalpebral zone" (that describes Meesmann). Reworded "clear in retroillumination" to "densely crowded clear microcysts on retroillumination". <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li><li><a href="https://eyewiki.org/Lisch_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Lisch Corneal Dystrophy (still lists XLD)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener"><img src="img/lisch.jpg" alt="Slit lamp: IC3D Figure 5 (multi-panel). Use panels A-C: A and B, diffuse/direct illumination showing gray epithelial opacities in radial, feathery and club-shaped (whorled/band) patterns; C, retroillumination showing that the opacity consists of densely crowded transparent microcysts. Panels D-F are histology, EM and confocal."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">IC3D Figure 5 (multi-panel). Use panels A-C: A and B, diffuse/direct illumination showing gray epithelial opacities in radial, feathery and club-shaped (whorled/band) patterns; C, retroillumination showing that the opacity consists of densely crowded transparent microcysts. Panels D-F are histology, EM and confocal.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="gelatinous" tabindex="0">
+  <div class="info">
+    <header><h3>Gelatinous Drop-Like</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Subepithelial / anterior stroma</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls"><b>Exception (AR)</b>, <em>TACSTD2</em>. Bilateral mulberry-like subepithelial amyloid nodules; severe photophobia and tearing early in life. Congo red positive.</p>
+    
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li><li><a href="https://eyewiki.org/Gelatinous_Drop-Like_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Gelatinous Drop-Like Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Gelatinous_drop-like_corneal_dystrophy_1.JPEG" target="_blank" rel="noopener"><img src="img/gelatinous.jpg" alt="Slit lamp: External/slit-lamp photo in diffuse white light: advanced GDLD with an almost entirely opaque cornea covered by multiple gelatinous, drop-like (mulberry) subepithelial amyloid nodules and some superficial vessels."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">External/slit-lamp photo in diffuse white light: advanced GDLD with an almost entirely opaque cornea covered by multiple gelatinous, drop-like (mulberry) subepithelial amyloid nodules and some superficial vessels.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<h4 class="group">Bowman layer (TGFBI / 5q31)</h4>
+<article class="card" id="reis-bucklers" tabindex="0">
+  <div class="info">
+    <header><h3>Reis-Bücklers</h3><span class="alt">CDB type I</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Bowman layer &amp; superficial stroma</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>TGFBI</em> R124L. Geographic or ring-like subepithelial opacities; early painful RCE and significant vision loss. Masson trichrome stains red. EM: <b>rod-shaped bodies</b> (same as granular type 1).</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Error fixed: the original said "curly fibers" on EM. Curly fibers belong to Thiel-Behnke; Reis-Bücklers shows rod-shaped bodies. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li><li><a href="https://eyewiki.org/Thiel-Behnke_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Thiel-Behnke Corneal Dystrophy (differentiates TBCD from RBCD)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Reis-B%C3%BCcklers_corneal_dystrophy._Reticular_opacity_in_the_superficial_cornea.JPEG" target="_blank" rel="noopener"><img src="img/reis-bucklers.jpg" alt="Slit lamp: Slit-lamp photo in direct/diffuse white light: coarse reticular/geographic gray-white opacities at the level of Bowman layer and superficial stroma across the central cornea."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Slit-lamp photo in direct/diffuse white light: coarse reticular/geographic gray-white opacities at the level of Bowman layer and superficial stroma across the central cornea.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="thiel-behnke" tabindex="0">
+  <div class="info">
+    <header><h3>Thiel-Behnke</h3><span class="alt">CDB type II</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Bowman layer &amp; superficial stroma</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>TGFBI</em> R555Q. Honeycomb-shaped subepithelial opacities; milder vision loss than Reis-Bücklers. Light microscopy (and AS-OCT): <b>sawtooth</b> pattern. EM: <b>curly fibers</b> (9–15 nm), the diagnostic finding.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Error fixed: "sawtooth" is a light-microscopy pattern, not EM. The EM finding is curly fibers. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li><li><a href="https://eyewiki.org/Thiel-Behnke_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Thiel-Behnke Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener"><img src="img/thiel-behnke.jpg" alt="Slit lamp: IC3D Figure 8 (multi-panel). Use panels A-C: A, early mild honeycomb appearance (diffuse light); B, intense honeycomb subepithelial opacity in advanced disease (slit-lamp, broad diffuse light); C, honeycomb opacity in a 42-year-old with R555Q TGFBI. Panels D-G: light microscopy (sawtooth), EM (curly filaments), confocal and OCT."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">IC3D Figure 8 (multi-panel). Use panels A-C: A, early mild honeycomb appearance (diffuse light); B, intense honeycomb subepithelial opacity in advanced disease (slit-lamp, broad diffuse light); C, honeycomb opacity in a 42-year-old with R555Q TGFBI. Panels D-G: light microscopy (sawtooth), EM (curly filaments), confocal and OCT.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<h4 class="group">Stroma · mnemonic: "Marilyn Monroe Always Gets Her Man In LA County"</h4>
+<article class="card" id="macular" tabindex="0">
+  <div class="info">
+    <header><h3>Macular</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Entire stroma, limbus to limbus, plus Descemet/endothelium</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls"><b>Exception (AR)</b>, <em>CHST6</em>, and worst visual prognosis. Diffuse stromal haze with focal gray-white spots with indistinct borders; <b>no clear spaces</b> between opacities. Cornea is often thinner than normal. <b>M</b>ucopolysaccharides (GAGs) stain with <b>A</b>lcian blue (also colloidal iron).</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Added: corneal thinning (an omission, not an error). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyewiki.org/Macular_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki — Macular Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Macular_corneal_dystrophy_lamp_exam.JPEG" target="_blank" rel="noopener"><img src="img/macular.jpg" alt="Slit lamp: Macular corneal dystrophy, slit lamp: discrete gray-white opacities within a diffusely hazy cornea with no clear intervening stroma."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Macular corneal dystrophy, slit lamp: discrete gray-white opacities within a diffusely hazy cornea with no clear intervening stroma.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="granular" tabindex="0">
+  <div class="info">
+    <header><h3>Granular (Type 1)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Anterior / central stroma</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>TGFBI</em> R555W. Crumb-like, sharply demarcated white opacities with <b>clear intervening stroma</b>; spares the peripheral limbus. Best early VA. <b>H</b>yaline stains red with <b>M</b>asson trichrome.</p>
+    
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyewiki.org/Granular_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki — Granular Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Granular_corneal_dystrophy_type_I._Numerous_irregular_shaped_discrete_crumb-like_corneal_opacities.JPEG" target="_blank" rel="noopener"><img src="img/granular.jpg" alt="Slit lamp: Granular corneal dystrophy type 1: numerous discrete, irregular crumb-like white stromal opacities, central, sparing the limbus (advanced case, opacities partly confluent)."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Granular corneal dystrophy type 1: numerous discrete, irregular crumb-like white stromal opacities, central, sparing the limbus (advanced case, opacities partly confluent).</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="lattice" tabindex="0">
+  <div class="info">
+    <header><h3>Lattice (Type 1)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Anterior / central stroma</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>TGFBI</em> R124C. Refractile branching pipe-stem lines (best on retroillumination) plus recurrent corneal erosions. <b>A</b>myloid stains orange-red with <b>C</b>ongo red (apple-green birefringence). Old "type 2" (Meretoja) is now classed as systemic gelsolin amyloidosis, not a corneal dystrophy.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Updated wording: Meretoja (old LCD type 2) is now familial systemic gelsolin amyloidosis (GSN), not a true corneal dystrophy. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyewiki.org/Lattice_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki — Lattice Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Lattice_corneal_dystrophy_type_1.JPEG" target="_blank" rel="noopener"><img src="img/lattice.jpg" alt="Slit lamp: Lattice corneal dystrophy: network of branching refractile linear stromal opacities. Note: this patient has a TGFBI L527R LCD variant (former &#x27;LCD type III&#x27;), so the lines are thicker than in classic R124C LCD."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Lattice corneal dystrophy: network of branching refractile linear stromal opacities. Note: this patient has a TGFBI L527R LCD variant (former &#x27;LCD type III&#x27;), so the lines are thicker than in classic R124C LCD.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="avellino" tabindex="0">
+  <div class="info">
+    <header><h3>Avellino</h3><span class="alt">Granular type 2</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Anterior / central stroma</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>TGFBI</em> R124H. Granular-type crumb, ring and stellate deposits plus short linear deposits (thicker and whiter than true lattice lines, rarely crisscross). Contains both hyaline and amyloid. <b>LASIK/PRK contraindicated</b> (worsens deposits).</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Reworded: IC3D discourages the old name "combined granular-lattice"; the linear deposits are not true lattice lines. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyewiki.org/Granular_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki — Granular Corneal Dystrophy (covers type 2)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Granular_corneal_dystrophy_type_II_slit_lamp.JPEG" target="_blank" rel="noopener"><img src="img/avellino.jpg" alt="Slit lamp: Granular corneal dystrophy type 2 (Avellino): variable-sized crumb-like and stellate stromal opacities, some fused into elongated linear shapes."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Granular corneal dystrophy type 2 (Avellino): variable-sized crumb-like and stellate stromal opacities, some fused into elongated linear shapes.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="schnyder" tabindex="0">
+  <div class="info">
+    <header><h3>Schnyder</h3><span class="alt">Crystalline</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Central anterior stroma early, panstromal later</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>UBIAD1</em>. Central subepithelial needle-like cholesterol crystals (only ~50% of cases) plus prominent arcus lipoides plus panstromal haze. Associated with hypercholesterolemia.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Layer corrected: starts centrally in the anterior stroma but becomes panstromal (the row already said "panstromal haze"). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyewiki.org/Schnyder_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki — Schnyder Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Schnyder_corneal_dystrophy_1.JPEG" target="_blank" rel="noopener"><img src="img/schnyder.jpg" alt="Slit lamp: Schnyder corneal dystrophy: central disc-shaped corneal opacity with fine subepithelial crystalline deposits."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Schnyder corneal dystrophy: central disc-shaped corneal opacity with fine subepithelial crystalline deposits.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="cloudy-francois" tabindex="0">
+  <div class="info">
+    <header><h3>Central Cloudy of François</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Posterior stroma</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-sp">Sporadic</span><span class="inh inh-AD">AD?</span></dd></div></dl>
+    <p class="pearls">Polygonal gray-white cloudy opacities separated by clear crack-like lines ("crocodile shagreen") in the deep central stroma. Asymptomatic; normal VA. IC3D: probably degenerative; indistinguishable from posterior crocodile shagreen.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Inheritance nuance: IC3D says AD inheritance is reported but "difficult to substantiate"; most likely degenerative. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener"><img src="img/cloudy-francois.jpg" alt="Slit lamp: IC3D Figure 19 (single panel): slit-lamp photo in diffuse/broad-beam light showing axially distributed, polygonal gray-white stromal opacities separated by linear areas of clear cornea (crocodile-shagreen pattern). IC3D notes no family history was available for this patient, so it may equally be posterior crocodile shagreen."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">IC3D Figure 19 (single panel): slit-lamp photo in diffuse/broad-beam light showing axially distributed, polygonal gray-white stromal opacities separated by linear areas of clear cornea (crocodile-shagreen pattern). IC3D notes no family history was available for this patient, so it may equally be posterior crocodile shagreen.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="fleck" tabindex="0">
+  <div class="info">
+    <header><h3>Fleck</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Stroma (all layers)</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>PIKFYVE</em>. Asymmetric (even unilateral), flat, gray-white dandruff-like specks throughout the stroma with clear intervening tissue. Usually asymptomatic with normal VA; occasionally mild photophobia or <b>decreased</b> corneal sensation.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Corrected: the original said "normal corneal sensation"; IC3D and EyeWiki note sensation can be decreased. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies, Edition 3 (Weiss et al., Cornea 2024;43:466-527)</a></li><li><a href="https://eyewiki.org/Fleck_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Fleck Corneal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Fleck_dystrophy_1.JPEG" target="_blank" rel="noopener"><img src="img/fleck.jpg" alt="Slit lamp: Left (large) panel: slit-lamp optic section showing tiny discrete gray-white dandruff-like flecks scattered within the otherwise clear stroma. Right two panels: in vivo confocal microscopy (not slit lamp)."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Left (large) panel: slit-lamp optic section showing tiny discrete gray-white dandruff-like flecks scattered within the otherwise clear stroma. Right two panels: in vivo confocal microscopy (not slit lamp).</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<h4 class="group">Descemet membrane &amp; endothelium</h4>
+<article class="card" id="fuchs" tabindex="0">
+  <div class="info">
+    <header><h3>Fuchs Endothelial</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Endothelium &amp; Descemet membrane</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span><span class="inh inh-sp">Sporadic</span></dd></div></dl>
+    <p class="pearls">Most common endothelial dystrophy (F &gt; M; <em>TCF4</em> repeat). Central beaten-metal guttae, morning blurred vision, stromal edema, epithelial bullae. Tx: hypertonic NaCl, DSAEK/DMEK.</p>
+    
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyerounds.org/cases/343-Fuchs-Endothelial-Corneal-Dystrophy.htm" target="_blank" rel="noopener">EyeRounds — Fuchs Endothelial Corneal Dystrophy (case 343)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7988464/" target="_blank" rel="noopener"><img src="img/fuchs.jpg" alt="Slit lamp: Fuchs endothelial corneal dystrophy. Panel B: retroillumination showing numerous central guttae with a stippled &#x27;beaten-metal&#x27; appearance. Panel A: central corneal edema. Cropped to panels A–B (histology and confocal panels removed)."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">Fuchs endothelial corneal dystrophy. Panel B: retroillumination showing numerous central guttae with a stippled &#x27;beaten-metal&#x27; appearance. Panel A: central corneal edema. Cropped to panels A–B (histology and confocal panels removed).</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="ppcd" tabindex="0">
+  <div class="info">
+    <header><h3>Posterior Polymorphous (PPCD)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Endothelium &amp; Descemet membrane</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>ZEB1, OVOL2, GRHL2</em>. Endothelial cells behave like epithelial cells (multilayered). Vesicles, railroad-track (snail-track) bands, geographic gray lesions; can cause iridocorneal adhesions and glaucoma.</p>
+    
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyewiki.org/Posterior_Polymorphous_Corneal_Dystrophy" target="_blank" rel="noopener">EyeWiki — Posterior Polymorphous Corneal Dystrophy</a></li><li><a href="https://eyerounds.org/cases/208-PPMD.htm" target="_blank" rel="noopener">EyeRounds — PPMD case 208</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2788618/" target="_blank" rel="noopener"><img src="img/ppcd.jpg" alt="Slit lamp: PPCD slit-lamp phenotypes. Top row: scattered vesicular endothelial lesions. Middle row: retroillumination and direct view of a band lesion with a gray halo. Bottom row: band (&#x27;railroad-track&#x27;) lesions with thickened Descemet edges. Low-resolution composite."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">PPCD slit-lamp phenotypes. Top row: scattered vesicular endothelial lesions. Middle row: retroillumination and direct view of a band lesion with a gray halo. Bottom row: band (&#x27;railroad-track&#x27;) lesions with thickened Descemet edges. Low-resolution composite.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="ched" tabindex="0">
+  <div class="info">
+    <header><h3>Congenital Hereditary Endothelial (CHED)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Endothelium &amp; Descemet membrane</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls"><b>Exception (AR)</b>, <em>SLC4A11</em>. Bilateral (often <b>asymmetric</b>) diffuse ground-glass corneal clouding at birth or infancy with marked stromal thickening; thickened Descemet membrane; nystagmus common; IOP normal. CHED + deafness = Harboyan syndrome.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Corrected: "bilateral symmetric" changed to "bilateral, often asymmetric" (IC3D). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">IC3D Classification of Corneal Dystrophies—Edition 3 (Weiss et al., Cornea 2024;43:466–527)</a></li><li><a href="https://eyewiki.org/Congenital_Hereditary_Endothelial_Dystrophy" target="_blank" rel="noopener">EyeWiki — Congenital Hereditary Endothelial Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Congenital_hereditary_endothelial_dystrophy_1.JPEG" target="_blank" rel="noopener"><img src="img/ched.jpg" alt="Slit lamp: CHED: diffuse, markedly opaque ground-glass cornea from stromal edema secondary to defective endothelium."></a>
+  <figcaption><span class="kind">Slit lamp</span> <span class="cap">CHED: diffuse, markedly opaque ground-glass cornea from stromal edema secondary to defective endothelium.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+</section>
+  <section class="part" id="retina"><h2>Inherited retinal diseases, by primary layer</h2>
+<p class="rule"><b>Board strategy:</b> group retinal dystrophies by the layer where the primary defect sits, then lock in the inheritance, the hallmark fundus appearance and the ERG/EOG signature.</p>
+<h4 class="group">Photoreceptors (rods &amp; cones)</h4>
+<article class="card" id="rp" tabindex="0">
+  <div class="info">
+    <header><h3>Retinitis Pigmentosa (RP)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Photoreceptors (rods &gt; cones)</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span><span class="inh inh-AR">AR</span><span class="inh inh-XL">XLR</span></dd></div></dl>
+    <p class="pearls">AD = mildest, latest onset; XLR = most severe, earliest onset. Classic triad: bone spicules, arteriolar attenuation, waxy disc pallor. Nyctalopia, ring scotoma. Scotopic ERG reduced and delayed (rod &gt; cone) early, <b>extinguished</b> in advanced disease.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Clarified: the scotopic ERG is reduced/delayed early and only becomes extinguished in advanced RP. <a href="https://eyewiki.org/Retinitis_Pigmentosa" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Retinitis_Pigmentosa" target="_blank" rel="noopener">EyeWiki: Retinitis Pigmentosa</a></li><li><a href="https://doi.org/10.1186/1750-1172-1-40" target="_blank" rel="noopener">Hamel C. Retinitis pigmentosa. Orphanet J Rare Dis 2006;1:40</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Fundus_of_patient_with_retinitis_pigmentosa,_mid_stage.jpg" target="_blank" rel="noopener"><img src="img/rp.jpg" alt="Fundus: Mid-stage RP: bone-spicule pigment in the mid-periphery, attenuated retinal arterioles, and a relatively preserved macula with a ring of depigmentation around it."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Mid-stage RP: bone-spicule pigment in the mid-periphery, attenuated retinal arterioles, and a relatively preserved macula with a ring of depigmentation around it.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="cone-rod" tabindex="0">
+  <div class="info">
+    <header><h3>Cone-Rod Dystrophy</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Photoreceptors (cones &gt; rods)</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span><span class="inh inh-AR">AR</span><span class="inh inh-XL">XL</span></dd></div></dl>
+    <p class="pearls">Early loss of central VA, dyschromatopsia, hemeralopia (daylight glare). Bull's-eye maculopathy. Photopic/flicker ERG reduced first, followed by scotopic ERG.</p>
+    
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1808442/" target="_blank" rel="noopener">Hamel CP. Cone rod dystrophies. Orphanet J Rare Dis 2007 (PMC1808442)</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6709772/" target="_blank" rel="noopener">Gill JS et al. Progressive cone and cone-rod dystrophies. Br J Ophthalmol 2019 (PMC6709772)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Fundus_of_a_patient_with_cone_rod_dystrophy.png" target="_blank" rel="noopener"><img src="img/cone-rod.jpg" alt="Fundus: Cone-rod dystrophy in a 45-year-old with an ABCA4 loss-of-function variant. The posterior pole shows atrophy with pigment deposits of various shapes, while the periphery (top of the image) is less damaged. This is a later stage; early disease more often shows a bull&#x27;s-eye maculopathy or subtle macular RPE change."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Cone-rod dystrophy in a 45-year-old with an ABCA4 loss-of-function variant. The posterior pole shows atrophy with pigment deposits of various shapes, while the periphery (top of the image) is less damaged. This is a later stage; early disease more often shows a bull&#x27;s-eye maculopathy or subtle macular RPE change.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="achromatopsia" tabindex="0">
+  <div class="info">
+    <header><h3>Achromatopsia</h3><span class="alt">Rod monochromacy</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Cone photoreceptors</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls"><em>CNGA3, CNGB3</em>. Absent/dysfunctional function of all 3 cone types. VA ~20/200, complete color blindness, severe photophobia, pendular nystagmus. Fundus normal or near-normal (OCT: ellipsoid-zone disruption). Absent photopic ERG, normal scotopic ERG.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Nuance added: fundus is normal early but OCT usually shows ellipsoid-zone disruption; mild RPE changes can develop later. <a href="https://eyewiki.org/Achromatopsia" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Achromatopsia" target="_blank" rel="noopener">EyeWiki: Achromatopsia</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12851907/" target="_blank" rel="noopener">Khan et al. CNGA3-Related Achromatopsia: 10-Year Follow-Up (PMC12851907)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12851907/" target="_blank" rel="noopener"><img src="img/achromatopsia.jpg" alt="Fundus: CNGA3-related achromatopsia at baseline. Left: color fundus photos are near-normal apart from mild yellow foveal discoloration. Right: SD-OCT shows foveal outer-retinal change (flattened/disrupted ellipsoid zone, arrows). BCVA was 20/200 OD and 20/400 OS. The fundus is classically normal, so the OCT is the more useful image."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">CNGA3-related achromatopsia at baseline. Left: color fundus photos are near-normal apart from mild yellow foveal discoloration. Right: SD-OCT shows foveal outer-retinal change (flattened/disrupted ellipsoid zone, arrows). BCVA was 20/200 OD and 20/400 OS. The fundus is classically normal, so the OCT is the more useful image.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="bcm" tabindex="0">
+  <div class="info">
+    <header><h3>Blue Cone Monochromacy</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>L &amp; M cone photoreceptors</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-XL">XLR</span></dd></div></dl>
+    <p class="pearls">Only S-cones and rods work. VA 20/60–20/200, nystagmus, photophobia, often myopic; affected males. Only limited blue-yellow discrimination, mainly in dim light (rod + S-cone interaction); daylight color vision is essentially absent. S-cone ERG preserved.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Corrected: the original said BCM "preserves blue-yellow discrimination". That overstates it; residual discrimination is limited and mostly mesopic. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1189259/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyerounds.org/cases/369-blue-cone-monochromacy.htm" target="_blank" rel="noopener">EyeRounds Case 369: Blue Cone Monochromacy (2025)</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4409040/" target="_blank" rel="noopener">Luo X et al. Blue Cone Monochromacy: Visual Function and Efficacy Outcome Measures. PLoS One 2015 (PMC4409040)</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1189259/" target="_blank" rel="noopener">Alpern M et al. Colour vision in blue-cone &#x27;monochromacy&#x27;. J Physiol 1971 (PMC1189259)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6019650/" target="_blank" rel="noopener"><img src="img/bcm.jpg" alt="Fundus: Blue cone monochromacy in a 24-year-old man with a de novo deletion of the OPN1LW/OPN1MW gene cluster. (c) Fundus photos are essentially normal apart from tilted myopic discs. (d) OCT shows normal layering with thinned photoreceptor layers. Panels c-d are cropped from the full figure, which also shows ERG (a-b) and D-15 (e)."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Blue cone monochromacy in a 24-year-old man with a de novo deletion of the OPN1LW/OPN1MW gene cluster. (c) Fundus photos are essentially normal apart from tilted myopic discs. (d) OCT shows normal layering with thinned photoreceptor layers. Panels c-d are cropped from the full figure, which also shows ERG (a-b) and D-15 (e).</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="csnb" tabindex="0">
+  <div class="info">
+    <header><h3>Congenital Stationary Night Blindness (CSNB)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Photoreceptors / bipolar synapse</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span><span class="inh inh-AR">AR</span><span class="inh inh-XL">XLR</span></dd></div></dl>
+    <p class="pearls">Non-progressive nyctalopia from birth with a normal fundus. <b>Schubert-Bornschein</b> type (XL or AR; complete and incomplete) gives the <b>electronegative ERG</b> (normal a-wave, reduced b-wave). The AD Riggs type is <b>not</b> electronegative (reduced a- and b-waves).</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Corrected: only the Schubert-Bornschein forms (XL/AR) have an electronegative ERG; the AD Riggs type does not. <a href="https://eyewiki.org/Congenital_Stationary_Night_Blindness_(CSNB)" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Congenital_Stationary_Night_Blindness_(CSNB)" target="_blank" rel="noopener">EyeWiki: Congenital Stationary Night Blindness (CSNB)</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8377097/" target="_blank" rel="noopener">Jiang X, Mahroo OA. Negative electroretinograms: genetic and acquired causes. Eye 2021 (PMC8377097)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://www.mdpi.com/2077-0383/14/4/1238" target="_blank" rel="noopener"><img src="img/csnb.jpg" alt="Fundus: CSNB fundi, which are essentially normal apart from myopic/tilted-disc changes. Left: Case 1, complete CSNB (autosomal recessive GPR179). Middle and right: Cases 2-3, brothers with X-linked incomplete CSNB (CACNA1F). Zeiss Clarus widefield. The fundus row is cropped from a figure that also shows OCT, mfERG and pVEP."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">CSNB fundi, which are essentially normal apart from myopic/tilted-disc changes. Left: Case 1, complete CSNB (autosomal recessive GPR179). Middle and right: Cases 2-3, brothers with X-linked incomplete CSNB (CACNA1F). Zeiss Clarus widefield. The fundus row is cropped from a figure that also shows OCT, mfERG and pVEP.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="oguchi" tabindex="0">
+  <div class="info">
+    <header><h3>Oguchi Disease</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Rod photoreceptors</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls">Form of CSNB (<em>SAG, GRK1</em>). Golden-yellow metallic fundus sheen in light that disappears after prolonged (often 2–3 h) dark adaptation and returns within minutes of light (<b>Mizuo-Nakamura phenomenon</b>).</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Softened timing: reported dark-adaptation times range from ~45 min to 3+ h. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10129271/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Congenital_Stationary_Night_Blindness_(CSNB)" target="_blank" rel="noopener">EyeWiki: CSNB (Oguchi section)</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10129271/" target="_blank" rel="noopener">Habeeb R et al. Oguchi disease case report. Ann Med Surg 2023 (PMC10129271)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://series.publisso.de/en/journals/oc/volume8/oc000089" target="_blank" rel="noopener"><img src="img/oguchi.jpg" alt="Fundus: Oguchi disease (Mizuo-Nakamura phenomenon) in a 7-year-old boy. (A, B) Light-adapted fundi show the golden-yellow (greenish-gold) metallic sheen. (C, D) After dark adaptation the sheen is gone and the fundi look normal. In this child it took about 45 min; it classically takes hours."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Oguchi disease (Mizuo-Nakamura phenomenon) in a 7-year-old boy. (A, B) Light-adapted fundi show the golden-yellow (greenish-gold) metallic sheen. (C, D) After dark adaptation the sheen is gone and the fundi look normal. In this child it took about 45 min; it classically takes hours.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="albipunctatus" tabindex="0">
+  <div class="info">
+    <header><h3>Fundus Albipunctatus</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Photoreceptors / RPE visual cycle</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls">Form of CSNB (<em>RDH5</em>). Numerous discrete yellow-white dots across the mid-periphery, sparing the macula; normal retinal vessels (unlike retinitis punctata albescens). Rod ERG and dark adaptation normalize after prolonged dark adaptation. Some older patients develop cone dystrophy.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Added: rod ERG recovers after prolonged dark adaptation; not always stationary (some RDH5 patients develop cone dystrophy). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4543405/" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4543405/" target="_blank" rel="noopener">Skorczyk-Werner A et al. Fundus albipunctatus: review of the literature and novel RDH5 mutation. J Appl Genet 2015 (PMC4543405)</a></li><li><a href="https://eyewiki.org/Congenital_Stationary_Night_Blindness_(CSNB)" target="_blank" rel="noopener">EyeWiki: CSNB (fundus albipunctatus section)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8840791/" target="_blank" rel="noopener"><img src="img/albipunctatus.jpg" alt="Fundus: Fundus albipunctatus in a Chinese family with RDH5 variants. The fundus photo column (A1-A4) shows numerous discrete yellow-white dots that spare the fovea, with normal-caliber vessels. The most striking panels are A3-A4 (patient II:5). The full figure also shows FAF (B) and OCT (C)."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Fundus albipunctatus in a Chinese family with RDH5 variants. The fundus photo column (A1-A4) shows numerous discrete yellow-white dots that spare the fovea, with normal-caliber vessels. The most striking panels are A3-A4 (patient II:5). The full figure also shows FAF (B) and OCT (C).</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="lca" tabindex="0">
+  <div class="info">
+    <header><h3>Leber Congenital Amaurosis (LCA)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Photoreceptors &amp; RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span><span class="inh inh-AD">rare AD</span></dd></div></dl>
+    <p class="pearls">Severe congenital blindness, roving nystagmus, sluggish pupils, Franceschetti oculodigital sign (eye poking), extinguished ERG. Voretigene neparvovec (Luxturna) gene therapy for <b>biallelic</b> <em>RPE65</em> mutations.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Clarified: mostly AR with rare AD forms (CRX, IMPDH1, OTX2); voretigene is only for biallelic RPE65. <a href="https://eyewiki.org/Leber_Congenital_Amaurosis" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Leber_Congenital_Amaurosis" target="_blank" rel="noopener">EyeWiki: Leber Congenital Amaurosis</a></li><li><a href="https://eyerounds.org/genetic/001-RPE65-LCA.htm" target="_blank" rel="noopener">EyeRounds: RPE65-associated LCA</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11446184/" target="_blank" rel="noopener"><img src="img/lca.jpg" alt="Fundus: RPE65-associated LCA in a 27-year-old Japanese man with infantile nystagmus and lifelong night blindness. Panel A (color fundus, OD left, OS right) shows diffuse RPE hypopigmentation/mottling and narrowed retinal vessels. The LCA fundus is very variable, from near-normal in infancy to RP-like."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">RPE65-associated LCA in a 27-year-old Japanese man with infantile nystagmus and lifelong night blindness. Panel A (color fundus, OD left, OS right) shows diffuse RPE hypopigmentation/mottling and narrowed retinal vessels. The LCA fundus is very variable, from near-normal in infancy to RP-like.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<h4 class="group">Retinal pigment epithelium (RPE) &amp; Bruch's membrane</h4>
+<article class="card" id="stargardt" tabindex="0">
+  <div class="info">
+    <header><h3>Stargardt Disease</h3><span class="alt">Fundus flavimaculatus</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Photoreceptor outer segments (ABCA4) → lipofuscin in RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls">Most common juvenile macular dystrophy. <em>ABCA4</em> defect in photoreceptor outer segments → lipofuscin (A2E) builds up in the RPE → secondary RPE and photoreceptor loss. Beaten-bronze macular atrophy plus yellow pisciform (fishtail) flecks. FA "dark/silent choroid" in up to ~60%.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Layer clarified: ABCA4 is a photoreceptor protein; lipofuscin accumulates in the RPE. <a href="https://eyewiki.org/Stargardt_Disease/Fundus_Flavimaculatus" target="_blank" rel="noopener">source</a></li><li>Dark choroid is not universal (up to ~62% of patients). <a href="https://eyewiki.org/Stargardt_Disease/Fundus_Flavimaculatus" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Stargardt_Disease/Fundus_Flavimaculatus" target="_blank" rel="noopener">EyeWiki: Stargardt Disease/Fundus Flavimaculatus</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6331664/" target="_blank" rel="noopener"><img src="img/stargardt.jpg" alt="Fundus: Stargardt disease (compound heterozygous ABCA4), proband of a Han Chinese family. Top row: colour fundus photos (OD, OS) showing atrophic beaten-bronze macular lesion with surrounding yellowish flecks. Bottom row: fluorescein angiography showing hyperfluorescent flecks extending to the mid-periphery (Figure 2A-B of source; OCT panel C cropped out)."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Stargardt disease (compound heterozygous ABCA4), proband of a Han Chinese family. Top row: colour fundus photos (OD, OS) showing atrophic beaten-bronze macular lesion with surrounding yellowish flecks. Bottom row: fluorescein angiography showing hyperfluorescent flecks extending to the mid-periphery (Figure 2A-B of source; OCT panel C cropped out).</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="best" tabindex="0">
+  <div class="info">
+    <header><h3>Best Disease</h3><span class="alt">Vitelliform macular dystrophy</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>BEST1</em>; incomplete penetrance and variable expressivity. Egg-yolk (vitelliform) yellow macular lesion in childhood, then pseudohypopyon, vitelliruptive and atrophic stages; VA often surprisingly good early. Diagnostic <b>abnormal EOG (Arden ratio ≤ 1.5; normal ≥ 1.8)</b> with normal full-field ERG.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Arden cutoff written as ≤ 1.5 (normal ≥ 1.8); added incomplete penetrance. <a href="https://eyewiki.org/Best_Disease_and_Bestrophinopathies" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Best_Disease_and_Bestrophinopathies" target="_blank" rel="noopener">EyeWiki: Best Disease and Bestrophinopathies</a></li><li><a href="https://eyewiki.org/Electrooculogram" target="_blank" rel="noopener">EyeWiki: Electrooculogram (normal Arden ratio ranges)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6352371/" target="_blank" rel="noopener"><img src="img/best.jpg" alt="Fundus: Best vitelliform macular dystrophy (BEST1), proband of a Brazilian family. Colour fundus photographs of the right (a) and left (b) eye in the pseudohypopyon stage: yellow vitelliform material has settled inferiorly within the round macular lesion. Figure 2a-b of source; FAF, FA and OCT panels cropped out. This is not the classic intact &#x27;egg-yolk&#x27; stage: no openly licensed, adequately sized egg-yolk-stage photo was found."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Best vitelliform macular dystrophy (BEST1), proband of a Brazilian family. Colour fundus photographs of the right (a) and left (b) eye in the pseudohypopyon stage: yellow vitelliform material has settled inferiorly within the round macular lesion. Figure 2a-b of source; FAF, FA and OCT panels cropped out. This is not the classic intact &#x27;egg-yolk&#x27; stage: no openly licensed, adequately sized egg-yolk-stage photo was found.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="pattern" tabindex="0">
+  <div class="info">
+    <header><h3>Pattern Dystrophies</h3><span class="alt">Butterfly, adult vitelliform</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span><span class="inh inh-sp">Sporadic</span></dd></div></dl>
+    <p class="pearls"><em>PRPH2</em> most common (also <em>BEST1</em>, <em>IMPG1/2</em>, <em>CTNNA1</em>); many cases sporadic. Bilateral symmetric yellow/gray pigment figures (butterfly wings, reticular) at the macula; mild adult-onset vision loss. Normal ERG; EOG normal to mildly subnormal.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>PRPH2 is the most common gene, not the only one; EOG is normal to mildly subnormal depending on subtype. <a href="https://eyewiki.org/Pattern_Dystrophies" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Pattern_Dystrophies" target="_blank" rel="noopener">EyeWiki: Pattern Dystrophies</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10385706/" target="_blank" rel="noopener"><img src="img/pattern.jpg" alt="Fundus: Butterfly-shaped pattern dystrophy, right eye: colour fundus photo with yellowish butterfly-like flecks around the macula. Optic nerve head drusen, hard exudates and a secondary CNV are also present in this case. Figure 1A of source; the left-eye panel was cropped out. This is a modest, low-resolution example, not a textbook butterfly figure. EyeWiki&#x27;s Pattern Dystrophies page has a clearer butterfly FAF image (copyrighted)."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Butterfly-shaped pattern dystrophy, right eye: colour fundus photo with yellowish butterfly-like flecks around the macula. Optic nerve head drusen, hard exudates and a secondary CNV are also present in this case. Figure 1A of source; the left-eye panel was cropped out. This is a modest, low-resolution example, not a textbook butterfly figure. EyeWiki&#x27;s Pattern Dystrophies page has a clearer butterfly FAF image (copyrighted).</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="sorsby" tabindex="0">
+  <div class="info">
+    <header><h3>Sorsby Fundus Dystrophy</h3><span class="alt">Pseudoinflammatory</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Bruch's membrane &amp; RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>TIMP3</em>. Thickened Bruch's membrane; early <b>nyctalopia</b> / delayed dark adaptation, then bilateral submacular CNV and disciform scarring in the 30s–40s.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Added: night blindness and delayed dark adaptation are common first symptoms. <a href="https://eyewiki.org/Sorsby_Macular_Dystrophy" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Sorsby_Macular_Dystrophy" target="_blank" rel="noopener">EyeWiki: Sorsby Macular Dystrophy</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9509119/" target="_blank" rel="noopener">Sorsby fundus dystrophy (SFD): A narrative review. Medicine (Baltimore) 2022 (PMC9509119)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11011298/" target="_blank" rel="noopener"><img src="img/sorsby.jpg" alt="Fundus: Sorsby fundus dystrophy (TIMP3 p.Tyr152Cys), proband of Czech family 2. Panels A and C are colour fundus photos of the right and left eye: severe atrophy of the whole macular region with patchy pigmentation from long-standing CNV. Panels B and D are FAF showing central hypoautofluorescence. Top row of Figure 3; OCTA/OCT panels cropped out."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Sorsby fundus dystrophy (TIMP3 p.Tyr152Cys), proband of Czech family 2. Panels A and C are colour fundus photos of the right and left eye: severe atrophy of the whole macular region with patchy pigmentation from long-standing CNV. Panels B and D are FAF showing central hypoautofluorescence. Top row of Figure 3; OCTA/OCT panels cropped out.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="doyne" tabindex="0">
+  <div class="info">
+    <header><h3>Doyne Honeycomb</h3><span class="alt">Malattia Leventinese</span></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Bruch's membrane &amp; RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>EFEMP1</em>. Radial macular and peripapillary drusen arranged in a honeycomb pattern; drusen appear in the 20s–30s, symptoms usually in the 4th–5th decade; risk of secondary CNV.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Clarified onset: drusen appear in the 20s–30s but symptoms usually start in the 4th–5th decade. <a href="https://eyewiki.org/Doyne_Honeycomb_Retinal_Dystrophy" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Doyne_Honeycomb_Retinal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Doyne Honeycomb Retinal Dystrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13065107/" target="_blank" rel="noopener"><img src="img/doyne.jpg" alt="Fundus: Malattia Leventinese / Doyne honeycomb retinal dystrophy (EFEMP1). Colour fundus photo of the left eye with confluent and radially arranged yellow-white drusen at the macula, extending to the peripapillary region, plus central pigmentary change and atrophy. Figure 1, panel B of source."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Malattia Leventinese / Doyne honeycomb retinal dystrophy (EFEMP1). Colour fundus photo of the left eye with confluent and radially arranged yellow-white drusen at the macula, extending to the peripapillary region, plus central pigmentary change and atrophy. Figure 1, panel B of source.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<h4 class="group">Inner retina (bipolar / Müller cells) &amp; ganglion cell layer</h4>
+<article class="card" id="xlrs" tabindex="0">
+  <div class="info">
+    <header><h3>X-Linked Juvenile Retinoschisis (XLRS)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Inner retina (Müller cells); foveal schisis mainly INL, peripheral schisis NFL</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-XL">XLR</span></dd></div></dl>
+    <p class="pearls"><em>RS1</em> (retinoschisin). <b>Spoke-wheel foveal schisis</b> in nearly all patients (98–100%); peripheral schisis in ~50%, usually inferotemporal. Classic <b>electronegative ERG</b> (but a normal ERG doesn't rule it out). No leakage on FA.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Corrected the layer: foveal schisis is mainly in the inner nuclear layer on OCT; splitting at the nerve fiber layer describes the peripheral schisis. <a href="https://eyerounds.org/cases/349-jxlr.htm" target="_blank" rel="noopener">source</a></li><li>"100%" changed to "nearly all"; "bullous" removed (bullous peripheral schisis is mainly seen in infants). <a href="https://eyewiki.org/X-linked_Retinoschisis" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/X-linked_Retinoschisis" target="_blank" rel="noopener">EyeWiki – X-linked Retinoschisis</a></li><li><a href="https://eyerounds.org/cases/349-jxlr.htm" target="_blank" rel="noopener">EyeRounds case 349 – Juvenile X-linked Retinoschisis</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://bmcophthalmol.biomedcentral.com/articles/10.1186/s12886-023-02903-7" target="_blank" rel="noopener"><img src="img/xlrs.png" alt="Fundus: Color fundus photo, left eye, adult male with genetically confirmed XLRS (RS1): fine radial (spoke-wheel) striae around the fovea. Panel A of a figure, cropped. The disc cupping is from coexisting angle-closure glaucoma, not XLRS."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Color fundus photo, left eye, adult male with genetically confirmed XLRS (RS1): fine radial (spoke-wheel) striae around the fovea. Panel A of a figure, cropped. The disc cupping is from coexisting angle-closure glaucoma, not XLRS.</span></figcaption>
+</figure><figure class="fig">
+  <a href="https://eyerounds.org/cases/349-jxlr.htm" target="_blank" rel="noopener"><img src="img/xlrs-oct.jpg" alt="OCT: OCT through the fovea: cystoid schisis spaces mainly in the inner nuclear layer."></a>
+  <figcaption><span class="kind">OCT</span> <span class="cap">OCT through the fovea: cystoid schisis spaces mainly in the inner nuclear layer.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="lhon" tabindex="0">
+  <div class="info">
+    <header><h3>Leber Hereditary Optic Neuropathy (LHON)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Retinal ganglion cells (RGCs)</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-Mito">Mito</span></dd></div></dl>
+    <p class="pearls">Maternal inheritance; typically young males 15–35 (onset can be at any age). Subacute painless sequential bilateral central vision loss; circumpapillary telangiectatic microangiopathy and pseudoedema (<b>no FA leak</b>). mtDNA 11778 (ND4, most common, worst prognosis), 14484 (ND6, best recovery), 3460 (ND1). Tx: idebenone.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Added the three primary mtDNA mutations and idebenone; noted that onset can occur outside 15–35. <a href="https://eyewiki.org/Leber_Hereditary_Optic_Neuropathy" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Leber_Hereditary_Optic_Neuropathy" target="_blank" rel="noopener">EyeWiki – Leber Hereditary Optic Neuropathy</a></li><li><a href="https://eyerounds.org/cases/172-LHON.htm" target="_blank" rel="noopener">EyeRounds case 172 – LHON</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://eyewiki.org/File:LHON_nerve.jpg" target="_blank" rel="noopener"><img src="img/lhon.jpg" alt="Fundus: Optic disc in acute LHON: a hyperemic, pseudo-edematous disc with circumpapillary telangiectatic microangiopathy (dilated, tortuous peripapillary vessels). Such a disc does not leak on FA."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Optic disc in acute LHON: a hyperemic, pseudo-edematous disc with circumpapillary telangiectatic microangiopathy (dilated, tortuous peripapillary vessels). Such a disc does not leak on FA.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="kjer" tabindex="0">
+  <div class="info">
+    <header><h3>Dominant Optic Atrophy (Kjer)</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Retinal ganglion cells (RGCs)</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>OPA1</em>. Insidious bilateral symmetric central vision loss starting in the 1st–2nd decade; temporal (wedge-shaped) optic disc pallor, cecocentral scotoma, blue-yellow (tritan) color defect. Most patients stay better than 20/200.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Onset widened from "first decade" to 1st–2nd decade (very insidious). <a href="https://eyewiki.org/Autosomal_Dominant_Optic_Atrophy" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Autosomal_Dominant_Optic_Atrophy" target="_blank" rel="noopener">EyeWiki – Autosomal Dominant Optic Atrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:OPA1_optic_disc_atrophy.png" target="_blank" rel="noopener"><img src="img/kjer.png" alt="Fundus: Fundus photos of the right (left image) and left (right image) eyes of a patient with an OPA1 mutation, showing optic disc pallor (arrows), most marked temporally. Caveat: this patient had an atypical acute, late-onset OPA1 presentation, so the pallor is more diffuse than the classic wedge-shaped temporal pallor of childhood-onset Kjer."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Fundus photos of the right (left image) and left (right image) eyes of a patient with an OPA1 mutation, showing optic disc pallor (arrows), most marked temporally. Caveat: this patient had an atypical acute, late-onset OPA1 presentation, so the pallor is more diffuse than the classic wedge-shaped temporal pallor of childhood-onset Kjer.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<h4 class="group">Choriocapillaris &amp; choroid</h4>
+<article class="card" id="choroideremia" tabindex="0">
+  <div class="info">
+    <header><h3>Choroideremia</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Choriocapillaris &amp; RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-XL">XLR</span></dd></div></dl>
+    <p class="pearls"><em>CHM</em> (REP-1). Progressive mid-peripheral atrophy of RPE and choriocapillaris exposing bare white sclera and large choroidal vessels; small central macular island preserved late. Female carriers show patchy peripheral pigment mottling.</p>
+    
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Choroideremia" target="_blank" rel="noopener">EyeWiki – Choroideremia</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://journalretinavitreous.biomedcentral.com/articles/10.1186/s40942-021-00333-5" target="_blank" rel="noopener"><img src="img/choroideremia.jpg" alt="Fundus: Color fundus photographs, right and left eyes, of a male with choroideremia: extensive atrophy of the RPE and choriocapillaris exposing large choroidal vessels and white sclera, with a relatively preserved central macular island and spared optic discs. Panel A of a multi-panel figure, cropped."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Color fundus photographs, right and left eyes, of a male with choroideremia: extensive atrophy of the RPE and choriocapillaris exposing large choroidal vessels and white sclera, with a relatively preserved central macular island and spared optic discs. Panel A of a multi-panel figure, cropped.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="gyrate" tabindex="0">
+  <div class="info">
+    <header><h3>Gyrate Atrophy</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Choriocapillaris &amp; RPE</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AR">AR</span></dd></div></dl>
+    <p class="pearls">Ornithine aminotransferase (<em>OAT</em>) deficiency → <b>hyperornithinemia</b>. Scalloped, sharply demarcated peripheral chorioretinal atrophy that coalesces toward the posterior pole; high myopia, early PSC cataract, CME. Tx: arginine-restricted diet; vitamin B6 for the B6-responsive minority.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Clarified: vitamin B6 only helps the minority of patients who are B6-responsive. <a href="https://eyewiki.org/Gyrate_Atrophy" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Gyrate_Atrophy" target="_blank" rel="noopener">EyeWiki – Gyrate Atrophy</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://commons.wikimedia.org/wiki/File:Photo_of_fundus_with_gyrate_atrophy.webp" target="_blank" rel="noopener"><img src="img/gyrate.jpg" alt="Fundus: Ultra-widefield color fundus images, right and left eyes: multiple sharply demarcated, scalloped, coalescing patches of chorioretinal atrophy in the mid to far periphery, with the posterior pole spared. Panel A of a multi-panel figure, cropped. In the source figure, panel C shows the associated CME."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Ultra-widefield color fundus images, right and left eyes: multiple sharply demarcated, scalloped, coalescing patches of chorioretinal atrophy in the mid to far periphery, with the posterior pole spared. Panel A of a multi-panel figure, cropped. In the source figure, panel C shows the associated CME.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+<article class="card" id="cacd" tabindex="0">
+  <div class="info">
+    <header><h3>Central Areolar Choroidal Dystrophy</h3></header>
+    <dl class="meta"><div><dt>Layer</dt><dd>Photoreceptors &amp; RPE, with secondary choriocapillaris atrophy</dd></div><div><dt>Inheritance</dt><dd><span class="inh inh-AD">AD</span></dd></div></dl>
+    <p class="pearls"><em>PRPH2</em> (most often p.Arg142Trp). Well-circumscribed oval area of macular RPE and choriocapillaris atrophy exposing prominent choroidal vessels; no flecks or drusen. Changes start around age 20–40; serious vision loss usually in the 4th–7th decade.</p>
+    <div class="changed"><p class="lbl">Changed from your original</p><ul><li>Added the gene (PRPH2). Layer corrected: histology shows loss of photoreceptors and RPE with secondary choriocapillaris atrophy. Onset range widened from 30–50. <a href="https://eyewiki.org/Central_Areolar_Choroidal_Dystrophy" target="_blank" rel="noopener">source</a></li></ul></div>
+    <div class="sources"><p class="lbl">Check it here</p><ul><li><a href="https://eyewiki.org/Central_Areolar_Choroidal_Dystrophy" target="_blank" rel="noopener">EyeWiki: Central Areolar Choroidal Dystrophy</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/19243827/" target="_blank" rel="noopener">Boon CJF et al. Central areolar choroidal dystrophy. Ophthalmology 2009 (PubMed abstract)</a></li></ul></div>
+  </div>
+  <div class="figs"><figure class="fig">
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9351974/" target="_blank" rel="noopener"><img src="img/cacd.jpg" alt="Fundus: Central areolar choroidal dystrophy. Panels a-b: widefield colour fundus photos. Panels c-d: multicolor images. Each shows a sharply demarcated round/oval atrophic area at the macula. Panels e-f: FAF showing hypoautofluorescence of the lesion, with no other abnormality. Full Figure 1 of source."></a>
+  <figcaption><span class="kind">Fundus</span> <span class="cap">Central areolar choroidal dystrophy. Panels a-b: widefield colour fundus photos. Panels c-d: multicolor images. Each shows a sharply demarcated round/oval atrophic area at the macula. Panels e-f: FAF showing hypoautofluorescence of the lesion, with no other abnormality. Full Figure 1 of source.</span></figcaption>
+</figure></div>
+  <p class="reveal-hint">Tap to reveal</p>
+</article>
+</section>
+  <section class="part hooks-part" id="hooks"><h2>Rapid-fire memory hooks</h2><div class="hooks"><ul>
+<li><b>Electronegative ERG</b> (normal a-wave, reduced b-wave): inner retina / bipolar dysfunction. Think <b>X-linked retinoschisis</b> and <b>Schubert-Bornschein CSNB</b> (complete and incomplete), plus CRAO, <b>ischemic</b> CRVO, melanoma-associated retinopathy and quinine toxicity. CRAO/CRVO are usually one eye; genetic causes are both.</li>
+<li><b>Abnormal EOG with normal ERG:</b> Best vitelliform macular dystrophy (Arden ratio ≤ 1.5; normal ≥ 1.8). Also abnormal in carriers with a normal-looking fundus.</li>
+<li><b>X-linked recessive retinal trio:</b> X-linked RP, X-linked retinoschisis and choroideremia (plus blue cone monochromacy and ocular albinism type 1, <em>GPR143</em>).</li>
+<li><b>Stromal dystrophy stains</b> ("Marilyn Monroe Always Gets Her Man In LA County"): <b>M</b>acular = <b>M</b>ucopolysaccharide / <b>A</b>lcian blue (AR); <b>G</b>ranular = <b>H</b>yaline / <b>M</b>asson trichrome (AD); <b>L</b>attice = <b>A</b>myloid / <b>C</b>ongo red (AD).</li>
+</ul></div></section>
+  <details class="credits"><summary>Image credits</summary><ul><li><b>Epithelial Basement Membrane (EBMD):</b> Weiss JS, Rapuano CJ, Seitz B, et al. IC3D Classification of Corneal Dystrophies, Edition 3. Cornea 2024;43(4):466-527 (figure reproduced from IC3D Ed. 2, 2015). License CC BY-NC-ND 4.0 (non-commercial, no derivatives: use the figure uncropped with attribution). · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC10906208/</a></li><li><b>Meesmann:</b> Klintworth GK. Corneal dystrophies. Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons. License CC BY 2.0. Filename on Commons: &#x27;Meesmann corneal dystrophy - Multiple opaque spots in the corneal epithelium.JPEG&#x27;. · <a href="https://commons.wikimedia.org/wiki/File:Meesmann_corneal_dystrophy_-_Multiple_opaque_spots_in_the_corneal_epithelium.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Meesmann_corneal_dystroph…</a></li><li><b>Lisch Epithelial:</b> Weiss JS, Rapuano CJ, Seitz B, et al. IC3D Classification of Corneal Dystrophies, Edition 3. Cornea 2024;43(4):466-527 (figure reproduced from IC3D Ed. 2, 2015). License CC BY-NC-ND 4.0 (non-commercial, no derivatives: use the figure uncropped with attribution). · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC10906208/</a></li><li><b>Gelatinous Drop-Like:</b> Klintworth GK. Corneal dystrophies. Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons. License CC BY 2.0. Filename on Commons: &#x27;Gelatinous drop-like corneal dystrophy 1.JPEG&#x27;. · <a href="https://commons.wikimedia.org/wiki/File:Gelatinous_drop-like_corneal_dystrophy_1.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Gelatinous_drop-like_corn…</a></li><li><b>Reis-Bücklers:</b> Klintworth GK. Corneal dystrophies. Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons. License CC BY 2.0. Filename on Commons: &#x27;Reis-Bücklers corneal dystrophy. Reticular opacity in the superficial cornea.JPEG&#x27;. · <a href="https://commons.wikimedia.org/wiki/File:Reis-B%C3%BCcklers_corneal_dystrophy._Reticular_opacity_in_the_superficial_cornea.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Reis-B%C3%BCcklers_cornea…</a></li><li><b>Thiel-Behnke:</b> Weiss JS, Rapuano CJ, Seitz B, et al. IC3D Classification of Corneal Dystrophies, Edition 3. Cornea 2024;43(4):466-527 (figure reproduced from IC3D Ed. 2, 2015). License CC BY-NC-ND 4.0 (non-commercial, no derivatives: use the figure uncropped with attribution). · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC10906208/</a></li><li><b>Macular:</b> Klintworth GK, &#x27;Corneal dystrophies&#x27;, Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons — CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Macular_corneal_dystrophy_lamp_exam.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Macular_corneal_dystrophy…</a></li><li><b>Granular (Type 1):</b> Klintworth GK, &#x27;Corneal dystrophies&#x27;, Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons — CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Granular_corneal_dystrophy_type_I._Numerous_irregular_shaped_discrete_crumb-like_corneal_opacities.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Granular_corneal_dystroph…</a></li><li><b>Lattice (Type 1):</b> Klintworth GK, &#x27;Corneal dystrophies&#x27;, Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons — CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Lattice_corneal_dystrophy_type_1.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Lattice_corneal_dystrophy…</a></li><li><b>Avellino:</b> Klintworth GK, &#x27;Corneal dystrophies&#x27;, Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons — CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Granular_corneal_dystrophy_type_II_slit_lamp.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Granular_corneal_dystroph…</a></li><li><b>Schnyder:</b> Klintworth GK, &#x27;Corneal dystrophies&#x27;, Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons — CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Schnyder_corneal_dystrophy_1.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Schnyder_corneal_dystroph…</a></li><li><b>Central Cloudy of François:</b> Weiss JS, Rapuano CJ, Seitz B, et al. IC3D Classification of Corneal Dystrophies, Edition 3. Cornea 2024;43(4):466-527 (figure reproduced from IC3D Ed. 2, 2015). License CC BY-NC-ND 4.0 (non-commercial, no derivatives: use the figure uncropped with attribution). · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10906208/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC10906208/</a></li><li><b>Fleck:</b> Klintworth GK. Corneal dystrophies. Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), via Wikimedia Commons. License CC BY 2.0. Image courtesy of Dr. Charles N. McGhee. Filename on Commons: &#x27;Fleck dystrophy 1.JPEG&#x27;. · <a href="https://commons.wikimedia.org/wiki/File:Fleck_dystrophy_1.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Fleck_dystrophy_1.JPEG</a></li><li><b>Fuchs Endothelial:</b> Fautsch MP, Wieben ED, Baratz KH, et al. &#x27;TCF4-mediated Fuchs endothelial corneal dystrophy: Insights into a common trinucleotide repeat-associated disease&#x27;, Prog Retin Eye Res 2021 (PMC7988464), Fig. 1A–B (cropped) — CC BY 4.0 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7988464/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC7988464/</a></li><li><b>Posterior Polymorphous (PPCD):</b> Vincent AL, Niederer RL, Richards A, et al. &#x27;Phenotypic characterisation and ZEB1 mutational analysis in posterior polymorphous corneal dystrophy in a New Zealand population cohort&#x27;, Mol Vis 2009;15:2544–53 (PMC2788618), Fig. 1 — CC BY · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2788618/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC2788618/</a></li><li><b>Congenital Hereditary Endothelial (CHED):</b> Klintworth GK, &#x27;Corneal dystrophies&#x27;, Orphanet J Rare Dis 2009;4:7 (doi:10.1186/1750-1172-4-7), image courtesy of Dr. A.A. Hidajat, via Wikimedia Commons — CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Congenital_hereditary_endothelial_dystrophy_1.JPEG" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Congenital_hereditary_end…</a></li><li><b>Retinitis Pigmentosa (RP):</b> Christian Hamel, &#x27;Retinitis pigmentosa&#x27;, Orphanet J Rare Dis 2006;1:40 (Fig. 2), via Wikimedia Commons (cropped). CC BY 2.0. · <a href="https://commons.wikimedia.org/wiki/File:Fundus_of_patient_with_retinitis_pigmentosa,_mid_stage.jpg" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Fundus_of_patient_with_re…</a></li><li><b>Cone-Rod Dystrophy:</b> Christian P. Hamel, &#x27;Cone rod dystrophies&#x27;, Orphanet J Rare Dis 2007;2:7 (Fig. 1), via Wikimedia Commons. CC BY 2.0. · <a href="https://commons.wikimedia.org/wiki/File:Fundus_of_a_patient_with_cone_rod_dystrophy.png" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Fundus_of_a_patient_with_…</a></li><li><b>Achromatopsia:</b> Khan HM, Sumita FAG, Preti RC, Sarraf D, Navajas EV. &#x27;CNGA3-Related Achromatopsia: A 10-Year Follow-Up.&#x27; J Vitreoretin Dis 2026 (Fig. 1). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12851907/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC12851907/</a></li><li><b>Blue Cone Monochromacy:</b> Buena-Atienza E, Nasser F, Kohl S, Wissinger B. BMC Med Genet 2018;19:107 (Fig. 1c-d, cropped). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6019650/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC6019650/</a></li><li><b>Congenital Stationary Night Blindness (CSNB):</b> Durajczyk M, Lubinski W. &#x27;Congenital Stationary Night Blindness (CSNB)-Case Reports and Review of Current Knowledge.&#x27; J Clin Med 2025;14(4):1238 (Fig. 2, cropped). CC BY 4.0. · <a href="https://www.mdpi.com/2077-0383/14/4/1238" target="_blank" rel="noopener">mdpi.com/2077-0383/14/4/1238</a></li><li><b>Oguchi Disease:</b> Rishi P, Rishi E, Abraham S. &#x27;Oguchi&#x27;s disease with Mizuo-Nakamura phenomenon in a seven-year-old boy.&#x27; GMS Ophthalmol Cases 2018;8:Doc07 (Fig. 1). CC BY 4.0. · <a href="https://series.publisso.de/en/journals/oc/volume8/oc000089" target="_blank" rel="noopener">series.publisso.de/en/journals/oc/volume8/oc000089</a></li><li><b>Fundus Albipunctatus:</b> Qian T, Gong Q, Shen H, Li C, Wang G, Xu X. &#x27;Novel variants in the RDH5 gene in a Chinese Han family with fundus albipunctatus.&#x27; BMC Ophthalmol 2022 (Fig. 2). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8840791/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC8840791/</a></li><li><b>Leber Congenital Amaurosis (LCA):</b> Frontiers in Medicine 2024;11:1442107, &#x27;A novel RPE65 variant p.(Ala391Asp) in Leber congenital amaurosis: a case report and literature review in Japan&#x27; (Fig. 1A, cropped). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11446184/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC11446184/</a></li><li><b>Stargardt Disease:</b> Xiang Q, Cao Y, Xu H, et al. Biosci Rep. 2019;39(1):BSR20180872, doi:10.1042/BSR20180872, Figure 2 (cropped). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6331664/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC6331664/</a></li><li><b>Best Disease:</b> de Souza CPR, Mello LGM, Gomez F, Morizot E. Int J Retina Vitreous. 2019;5:3, doi:10.1186/s40942-019-0156-0, Figure 2 (cropped). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6352371/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC6352371/</a></li><li><b>Pattern Dystrophies:</b> Świerczyńska M, Danikiewicz-Zagała M, Sedlak L, Nowak-Wąs M, Wyględowska-Promieńska D. Rom J Ophthalmol. 2023;67(2):185-189, doi:10.22336/rjo.2023.32, Figure 1A (cropped). CC BY. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10385706/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC10385706/</a></li><li><b>Sorsby Fundus Dystrophy:</b> Vergaro A, Pankievic M, Jedlickova J, et al. Int J Mol Sci. 2024;25(7):3744, doi:10.3390/ijms25073744, Figure 3A-D (cropped). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11011298/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC11011298/</a></li><li><b>Doyne Honeycomb:</b> Shakeel A, Bhatt D, Sripriya S, Ratra D. Rom J Ophthalmol. 2025, doi:10.22336/rjo.2025.93, Figure 1 panel B (cropped). CC BY 4.0. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13065107/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC13065107/</a></li><li><b>X-Linked Juvenile Retinoschisis (XLRS):</b> Li Y, Li J, Pan X, Zhang Z, Zheng Y. BMC Ophthalmology 2023 (doi:10.1186/s12886-023-02903-7), Fig. 1A. CC BY 4.0. · <a href="https://bmcophthalmol.biomedcentral.com/articles/10.1186/s12886-023-02903-7" target="_blank" rel="noopener">bmcophthalmol.biomedcentral.com/articles/10.1186/s12886-0…</a></li><li><b>X-Linked Juvenile Retinoschisis (XLRS):</b> EyeRounds.org, University of Iowa, case 349, Fig. 2. Copyrighted; used for personal study. · <a href="https://eyerounds.org/cases/349-jxlr.htm" target="_blank" rel="noopener">eyerounds.org/cases/349-jxlr.htm</a></li><li><b>Leber Hereditary Optic Neuropathy (LHON):</b> EyeWiki (American Academy of Ophthalmology), &#x27;LHON_nerve.jpg&#x27;, courtesy of Mark Moster, MD. Copyrighted with no open license stated; used as an educational fallback because no openly licensed acute-phase LHON disc photo could be found. · <a href="https://eyewiki.org/File:LHON_nerve.jpg" target="_blank" rel="noopener">eyewiki.org/File:LHON_nerve.jpg</a></li><li><b>Dominant Optic Atrophy (Kjer):</b> Nochez Y, Arsene S, Gueguen N, et al. Molecular Vision 2009;15:598–608 (PMC2661005), Fig. 1. CC BY 3.0, via Wikimedia Commons. · <a href="https://commons.wikimedia.org/wiki/File:OPA1_optic_disc_atrophy.png" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:OPA1_optic_disc_atrophy.png</a></li><li><b>Choroideremia:</b> Murro V, Mucciolo DP, Giorgio D, et al. &#x27;Lamellar hole-associated epiretinal proliferation in choroideremia: a case report.&#x27; International Journal of Retina and Vitreous 2021 (doi:10.1186/s40942-021-00333-5), Fig. 1A. CC BY 4.0. · <a href="https://journalretinavitreous.biomedcentral.com/articles/10.1186/s40942-021-00333-5" target="_blank" rel="noopener">journalretinavitreous.biomedcentral.com/articles/10.1186/…</a></li><li><b>Gyrate Atrophy:</b> Palmer E, Stepien KM, Campbell C, et al. Orphanet Journal of Rare Diseases 2023 (doi:10.1186/s13023-023-02840-0). CC BY 4.0, via Wikimedia Commons. · <a href="https://commons.wikimedia.org/wiki/File:Photo_of_fundus_with_gyrate_atrophy.webp" target="_blank" rel="noopener">commons.wikimedia.org/wiki/File:Photo_of_fundus_with_gyra…</a></li><li><b>Central Areolar Choroidal Dystrophy:</b> Poornachandra B, Snehith R, Reddy N, Jayadev C, Gadde SGK. Oman J Ophthalmol. 2022;15(2):247-248, doi:10.4103/ojo.ojo_83_21, Figure 1. CC BY-NC-SA 4.0 (non-commercial, share-alike; fine for personal study use, attribution required). No CC BY human CACD fundus photo was found. · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9351974/" target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov/articles/PMC9351974/</a></li></ul></details>
+  <footer>Images are reproduced from open-access sources (mostly CC BY; IC3D figures are CC BY-NC-ND) for personal study, with full credits under "Image credits" above. Several are multi-panel figures; the caption says which panel to look at.</footer>
+</main>
+<script>
+(function(){
+  var b=document.getElementById('quiz');
+  b.addEventListener('click',function(){
+    var on=document.body.classList.toggle('quiz');
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Show all answers':'Quiz me: hide names';
+    document.querySelectorAll('.card.open').forEach(function(c){c.classList.remove('open')});
+  });
+  function reveal(c){ if(document.body.classList.contains('quiz')) c.classList.add('open'); }
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('click',function(e){ if(document.body.classList.contains('quiz')&&!c.classList.contains('open')){e.preventDefault();reveal(c);} },true);
+    c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ if(document.body.classList.contains('quiz')&&!c.classList.contains('open')){e.preventDefault();reveal(c);} } });
+  });
+})();
+</script>
+
+</body></html>

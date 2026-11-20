@@ -2,4 +2,6 @@
 
 # study
 
-Created in [T3 Code](https://t3.codes).
+TMOD Dystrophies Atlas, an NBEO Part II study reference for corneal dystrophies and inherited retinal diseases.
+
+Live at https://study.johnh.art (GitHub Pages, served from `main`).
